@@ -20,8 +20,6 @@ body {
 	width: 80%;
 	max-width: 350px;
 	background-color: #ffffff;
-
-	/*    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 	border-radius: 10px;
 	box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24); 
 	clear:both;
@@ -41,9 +39,18 @@ body {
 	text-align: center;
 	height: 15%;
 	border-radius: 10px 10px 0 0;
+	display: table;
+	margin: 0;
+	width: 100%;
+}
+#gametitle {
+	display: table-cell;
+	vertical-align: middle;
 }
 #content {
 	padding: 15%;
+	display: table;
+	margin: 0 auto;
 }
 #loader {
 	  margin: auto;
@@ -56,5 +63,6 @@ body {
 	vertical-align: middle;
 	height:50px;
 	animation: spin 1s linear infinite;
-	display: none;
+	display: table-cell;
+	vertical-align: middle;
 }
