@@ -4,13 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SpyChamp</title>
-	<link rel="stylesheet" type="text/css" href="index.css" />
-	<script src="sct.js"></script> 
+	<link rel="stylesheet" type="text/css" href="res/css/index.css" />
+	<script src="res/sct.js"></script> 
 </head>
 
 <body>
 	<!-- Mock controls (will be actually triggered automatically -->
-	<input type="button" value="Connected" onclick="socketLoaded()" />
+	<input type="button" value="Load" onclick="toLoad()" />
+	<input type="button" value="Start" onclick="toStart()" />
+	<input type="button" value="Host" onclick="toHost()" />
+	<input type="button" value="Join" onclick="toJoin()" />
+	<input type="button" value="Wait" onclick="toWait()" />
+	<input type="button" value="Play" onclick="toPlay()" />
 	
 	<!-- Main Box -->
 	<div id="container">
@@ -25,6 +30,7 @@
 		
 			<!-- Load screen -->
 			<div id="load">
+				<!-- -->
 			</div>
 			
 			<!-- Start screen -->
@@ -53,6 +59,7 @@
 					<li>test</li>
 					<li>test</li>
 					<li>test</li>
+				</ul>
 			</div>
 			
 			<!-- Play screen -->
