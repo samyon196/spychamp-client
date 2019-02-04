@@ -5,18 +5,61 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SpyChamp</title>
 	<link rel="stylesheet" type="text/css" href="index.css" />
+	<script src="sct.js"></script> 
 </head>
+
 <body>
+	<!-- Mock controls (will be actually triggered automatically -->
+	<input type="button" value="Connected" onclick="socketLoaded()" />
+	
 	<!-- Main Box -->
-	<div id="mainbox">
+	<div id="container">
+	
 		<div id="header">
-			<div id="gametitle">
+			<div id="title">
 				<h3>SpyChamp</h3>
 			</div>
 		</div>
+		
 		<div id="content">
-			<!-- Loader -->
-						<div id="loader"></div>
+		
+			<!-- Load screen -->
+			<div id="load">
+			</div>
+			
+			<!-- Start screen -->
+			<div id="start">
+				<input type="button" value="Join" style="background-color:red" />
+				<input type="button" value="Host" style="background-color:green" />
+			</div>
+			
+			<!-- Host screen -->
+			<div id="host">
+				Select nick <br />
+				Select time <br />
+			</div>
+			
+			<!-- Join screen -->
+			<div id="join">
+				Room number <br />
+			</div>
+			
+			<!-- Wait screen -->
+			<div id="wait">
+				Players: 
+				<ul>
+					<li>test</li>
+					<li>test</li>
+					<li>test</li>
+					<li>test</li>
+					<li>test</li>
+			</div>
+			
+			<!-- Play screen -->
+			<div id="play">
+				You are the spy :)
+			</div>
+			
 		</div>
 	</div>
 </body>
