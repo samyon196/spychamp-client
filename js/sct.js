@@ -6,40 +6,14 @@ function allInvisible() {
 	document.getElementById("wait").style.display = "none";
 	document.getElementById("play").style.display = "none";
 }
-function toLoad() {
+function openView(viewName) {
 	allInvisible();
-	document.getElementById("load").style.display = "table-cell";
-	document.getElementById("container").style.height = "230px";
+	var view = document.getElementById(viewName);
+	var header = document.getElementById("header");
+	var container = document.getElementById("container");
+	var content = document.getElementById("content");
+	view.style.display = "block";
+	var margin = getComputedStyle(document.querySelector('.view')).marginTop;
+	var height = view.offsetHeight + header.scrollHeight + 20 + 'px';
+	container.style.height = height;
 }
-
-function toStart() {
-	allInvisible();
-	document.getElementById("main").style.display = "table-cell";
-	document.getElementById("container").style.height = "200px";
-}
-
-function toHost() {
-	allInvisible();
-	document.getElementById("host").style.display = "table-cell";
-	document.getElementById("container").style.height = "450px";
-}
-
-function toJoin() {
-	allInvisible();
-	document.getElementById("join").style.display = "table-cell";
-	document.getElementById("container").style.height = "300px";
-}
-
-function toWait() {
-	allInvisible();
-	document.getElementById("wait").style.display = "table-cell";
-	document.getElementById("container").style.height = "500px";
-}
-
-function toPlay() {
-	allInvisible();
-	document.getElementById("play").style.display = "table-cell";
-	document.getElementById("container").style.height = "500px";
-}
-
-

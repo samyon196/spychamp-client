@@ -8,20 +8,20 @@
 	<script src="js/sct.js"></script>
 
 	<!-- Views css: -->
-		<link rel="stylesheet" type="text/css" href="views/play/play.css" />
-	<link rel="stylesheet" type="text/css" href="views/main/main.css" />
+		<link rel="stylesheet" type="text/css" href="views/host/host.css" />
 	<link rel="stylesheet" type="text/css" href="views/join/join.css" />
-	<link rel="stylesheet" type="text/css" href="views/host/host.css" />
 	<link rel="stylesheet" type="text/css" href="views/load/load.css" />
+	<link rel="stylesheet" type="text/css" href="views/main/main.css" />
+	<link rel="stylesheet" type="text/css" href="views/play/play.css" />
 	<link rel="stylesheet" type="text/css" href="views/wait/wait.css" />
 
 
 	<!-- Views js: -->
-		<script src="views/play/play.js"></script>
-	<script src="views/main/main.js"></script>
+		<script src="views/host/host.js"></script>
 	<script src="views/join/join.js"></script>
-	<script src="views/host/host.js"></script>
 	<script src="views/load/load.js"></script>
+	<script src="views/main/main.js"></script>
+	<script src="views/play/play.js"></script>
 	<script src="views/wait/wait.js"></script>
 
 
@@ -39,26 +39,26 @@
 
 		<div id="content">
 			<!-- Views go here -->
-			<div class="view" id="play">
-	you are spy
+			<!-- Host screen -->
+<div class="view" id="host">
+	Select nick <br />
+	Select time <br />
+</div>
+<!-- Join screen -->
+<div class="view" id="join">
+	Room number <br />
+</div>
+<!-- Load screen -->
+<div class="view" id="load">
+	<!-- -->
 </div>
 <!-- Connect screen -->
 <div class="view" id="main">
 	<input type="button" value="Join" style="background-color:red" />
 	<input type="button" value="Host" style="background-color:green" />
 </div>
-<!-- Join screen -->
-<div class="view" id="join">
-	Room number <br />
-</div>
-<!-- Host screen -->
-<div class="view" id="host">
-	Select nick <br />
-	Select time <br />
-</div>
-<!-- Load screen -->
-<div class="view" id="load">
-	<!-- -->
+<div class="view" id="play">
+	you are spy
 </div>
 <!-- Wait screen -->
 <div class="view" id="wait">
@@ -76,12 +76,12 @@
 	</div>
 	<div id="controls">
 		<!-- Mock controls (will be actually triggered automatically -->
-		<input type="button" value="Load" onclick="toLoad()" />
-		<input type="button" value="Start" onclick="toStart()" />
-		<input type="button" value="Host" onclick="toHost()" />
-		<input type="button" value="Join" onclick="toJoin()" />
-		<input type="button" value="Wait" onclick="toWait()" />
-		<input type="button" value="Play" onclick="toPlay()" />
+		<input type="button" value="Load" onclick="openView(&quot;load&quot;)" />
+		<input type="button" value="Star" onclick="openView(&quot;main&quot;)" />
+		<input type="button" value="Host" onclick="openView(&quot;host&quot;)" />
+		<input type="button" value="Join" onclick="openView(&quot;join&quot;)" />
+		<input type="button" value="Wait" onclick="openView(&quot;wait&quot;)" />
+		<input type="button" value="Play" onclick="openView(&quot;play&quot;)" />
 	</div>
 </body>
 </html>
