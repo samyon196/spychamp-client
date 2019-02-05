@@ -1,0 +1,19 @@
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+#load {
+	margin: auto;
+	width: 50%;
+	border: 7px solid #d3d3d3; /* Light grey */
+	border-top: 7px solid #cc66ff; /* Blue */
+	border-radius: 50%;
+	width: 50px;
+	text-align: center;
+	vertical-align: middle;
+	height:50px;
+	opacity: 0;
+	animation: spin 1s linear infinite, fade-in 3s ease-in-out 0.5s forwards;
+	display: table-cell;
+	vertical-align: middle;
+}

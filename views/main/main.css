@@ -1,0 +1,6 @@
+#main {
+	vertical-align: middle;
+	display: none;
+	animation: fade-in 3s ease-in-out 0.5s forwards;
+	opacity: 0;
+}
