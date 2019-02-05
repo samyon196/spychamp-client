@@ -4,8 +4,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SpyChamp</title>
-	<link rel="stylesheet" type="text/css" href="res/css/index.css" />
-	<script src="res/sct.js"></script> 
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="js/ct.js"></script> 
+
+	<!-- Views css: -->
+		<link rel="stylesheet" type="text/css" href="views/play/play.css" />
+	<link rel="stylesheet" type="text/css" href="views/main/main.css" />
+	<link rel="stylesheet" type="text/css" href="views/join/join.css" />
+	<link rel="stylesheet" type="text/css" href="views/host/host.css" />
+	<link rel="stylesheet" type="text/css" href="views/load/load.css" />
+	<link rel="stylesheet" type="text/css" href="views/wait/wait.css" />
+
+
+	<!-- Views js: -->
+		<script src="views/play/play.js"></script>
+	<script src="views/main/main.js"></script>
+	<script src="views/join/join.js"></script>
+	<script src="views/host/host.js"></script>
+	<script src="views/load/load.js"></script>
+	<script src="views/wait/wait.js"></script>
+
 </head>
 
 <body>
@@ -27,46 +45,38 @@
 		</div>
 		
 		<div id="content">
-		
-			<!-- Load screen -->
-			<div id="load">
-				<!-- -->
-			</div>
+			<!-- Views go here -->
 			
-			<!-- Start screen -->
-			<div id="start">
-				<input type="button" value="Join" style="background-color:red" />
-				<input type="button" value="Host" style="background-color:green" />
-			</div>
-			
-			<!-- Host screen -->
-			<div id="host">
-				Select nick <br />
-				Select time <br />
-			</div>
-			
-			<!-- Join screen -->
-			<div id="join">
-				Room number <br />
-			</div>
-			
-			<!-- Wait screen -->
-			<div id="wait">
-				Players: 
-				<ul>
-					<li>test</li>
-					<li>test</li>
-					<li>test</li>
-					<li>test</li>
-					<li>test</li>
-				</ul>
-			</div>
-			
-			<!-- Play screen -->
-			<div id="play">
-				You are the spy :)
-			</div>
-			
+<!-- Connect screen -->
+<div id="connect">
+	<input type="button" value="Join" style="background-color:red" />
+	<input type="button" value="Host" style="background-color:green" />
+</div>
+<!-- Join screen -->
+<div id="join">
+	Room number <br />
+</div>
+<!-- Host screen -->
+<div id="host">
+	Select nick <br />
+	Select time <br />
+</div>
+<!-- Load screen -->
+<div id="load">
+	<!-- -->
+</div>
+<!-- Wait screen -->
+<div id="wait">
+	Players: 
+	<ul>
+		<li>test</li>
+		<li>test</li>
+		<li>test</li>
+		<li>test</li>
+		<li>test</li>
+	</ul>
+</div>
+
 		</div>
 	</div>
 </body>
