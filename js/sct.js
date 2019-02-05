@@ -1,6 +1,6 @@
 function allInvisible() {
 	document.getElementById("load").style.display = "none";
-	document.getElementById("start").style.display = "none";
+	document.getElementById("main").style.display = "none";
 	document.getElementById("host").style.display = "none";
 	document.getElementById("join").style.display = "none";
 	document.getElementById("wait").style.display = "none";
@@ -14,7 +14,7 @@ function toLoad() {
 
 function toStart() {
 	allInvisible();
-	document.getElementById("start").style.display = "table-cell";
+	document.getElementById("main").style.display = "table-cell";
 	document.getElementById("container").style.height = "200px";
 }
 
