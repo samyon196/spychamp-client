@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SpyChamp</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<script src="js/sct.js"></script> 
+	<script src="js/sct.js"></script>
 
 	<!-- Views css: -->
 		<link rel="stylesheet" type="text/css" href="views/play/play.css" />
@@ -24,26 +24,19 @@
 	<script src="views/load/load.js"></script>
 	<script src="views/wait/wait.js"></script>
 
+
 </head>
 
 <body>
-	<!-- Mock controls (will be actually triggered automatically -->
-	<input type="button" value="Load" onclick="toLoad()" />
-	<input type="button" value="Start" onclick="toStart()" />
-	<input type="button" value="Host" onclick="toHost()" />
-	<input type="button" value="Join" onclick="toJoin()" />
-	<input type="button" value="Wait" onclick="toWait()" />
-	<input type="button" value="Play" onclick="toPlay()" />
-	
 	<!-- Main Box -->
 	<div id="container">
-	
+
 		<div id="header">
 			<div id="title">
-				<h3>SpyChamp</h3>
+				SpyChamp
 			</div>
 		</div>
-		
+
 		<div id="content">
 			<!-- Views go here -->
 			<div class="view" id="play">
@@ -80,6 +73,15 @@
 </div>
 
 		</div>
+	</div>
+	<div id="controls">
+		<!-- Mock controls (will be actually triggered automatically -->
+		<input type="button" value="Load" onclick="toLoad()" />
+		<input type="button" value="Start" onclick="toStart()" />
+		<input type="button" value="Host" onclick="toHost()" />
+		<input type="button" value="Join" onclick="toJoin()" />
+		<input type="button" value="Wait" onclick="toWait()" />
+		<input type="button" value="Play" onclick="toPlay()" />
 	</div>
 </body>
 </html>
