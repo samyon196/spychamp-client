@@ -14,6 +14,6 @@ function openView(viewName) {
 	var content = document.getElementById("content");
 	view.style.display = "block";
 	var margin = getComputedStyle(document.querySelector('.view')).marginTop;
-	var height = view.offsetHeight + header.scrollHeight + 20 + 'px';
+	var height = view.scrollHeight + header.scrollHeight + 'px';
 	container.style.height = height;
 }
