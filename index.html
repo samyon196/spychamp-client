@@ -33,7 +33,7 @@
 
 		<div id="header">
 			<div id="title">
-				SpyChamp
+				<i>SpyChamp</i>
 			</div>
 		</div>
 
@@ -51,24 +51,26 @@
 <!-- Load screen -->
 <div class="view" id="load">
 	<!-- -->
-    <div id="loadtable">
-        <div id="loadwheel">
-
+    <div id="table">
+        <div id="tablecell">
+            <div id="loadwheel">
+            </div>
         </div>
     </div>
 </div>
 
 <!-- Connect screen -->
 <div class="view" id="main">
-	<input type="button" value="Join" style="background-color:red" />
-	<input type="button" value="Host" style="background-color:green" />
+	<input type="button" class="mainbtn" value="Host" />
+	<input type="button" class="mainbtn" value="Join" />
 </div>
+
 <div class="view" id="play">
 	you are spy
 </div>
 <!-- Wait screen -->
 <div class="view" id="wait">
-	Players: 
+	Players:
 	<ul>
 		<li>test</li>
 		<li>test</li>
@@ -81,6 +83,7 @@
 		</div>
 	</div>
 	<div id="controls">
+		<br /><br /><br />
 		<!-- Mock controls (will be actually triggered automatically -->
 		<input type="button" value="Load" onclick="openView(&quot;load&quot;)" />
 		<input type="button" value="Star" onclick="openView(&quot;main&quot;)" />

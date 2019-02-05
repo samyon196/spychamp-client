@@ -1,6 +1,17 @@
 #main {
-	vertical-align: middle;
-	display: none;
-	animation: fade-in 3s ease-in-out 0.5s forwards;
-	opacity: 0;
+	text-align: center;
+	height: 64px;
+}
+.mainbtn {
+	background-color: #997fff; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
 }
