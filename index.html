@@ -8,20 +8,20 @@
 	<script src="js/sct.js"></script>
 
 	<!-- Views css: -->
-		<link rel="stylesheet" type="text/css" href="views/play/play.css" />
-	<link rel="stylesheet" type="text/css" href="views/main/main.css" />
+		<link rel="stylesheet" type="text/css" href="views/host/host.css" />
 	<link rel="stylesheet" type="text/css" href="views/join/join.css" />
-	<link rel="stylesheet" type="text/css" href="views/host/host.css" />
 	<link rel="stylesheet" type="text/css" href="views/load/load.css" />
+	<link rel="stylesheet" type="text/css" href="views/main/main.css" />
+	<link rel="stylesheet" type="text/css" href="views/play/play.css" />
 	<link rel="stylesheet" type="text/css" href="views/wait/wait.css" />
 
 
 	<!-- Views js: -->
-		<script src="views/play/play.js"></script>
-	<script src="views/main/main.js"></script>
+		<script src="views/host/host.js"></script>
 	<script src="views/join/join.js"></script>
-	<script src="views/host/host.js"></script>
 	<script src="views/load/load.js"></script>
+	<script src="views/main/main.js"></script>
+	<script src="views/play/play.js"></script>
 	<script src="views/wait/wait.js"></script>
 
 
@@ -39,30 +39,7 @@
 
 		<div id="content">
 			<!-- Views go here -->
-			<div class="view" id="play">
-	you are spy
-</div>
-<!-- Connect screen -->
-<div class="view" id="main">
-	<input type="button" class="mainbtn" value="Host" onclick="openView(&quot;host&quot;)"/>
-	<div id="spacer">
-	</div>
-	<input type="button" class="mainbtn" value="Join" onclick="openView(&quot;join&quot;)"/>
-</div>
-
-<!-- Join screen -->
-<div class="view" id="join">
-	<form>
-      <div class="group">
-        <input type="text" id="username_j" required autofocus>
-        <span class="bar"></span>
-        <label>Username</label>
-      </div>
-	  <input type="button" value="Join" onclick="openView(&quot;wait&quot;)"/>
-    </form>
-</div>
-
-<!-- Host screen -->
+			<!-- Host screen -->
 <div class="view" id="host">
 	<form>
       <div class="group">
@@ -80,6 +57,18 @@
     </form>
 </div>
 
+<!-- Join screen -->
+<div class="view" id="join">
+	<form>
+      <div class="group">
+        <input type="text" id="username_j" required autofocus>
+        <span class="bar"></span>
+        <label>Username</label>
+      </div>
+	  <input type="button" value="Join" onclick="openView(&quot;wait&quot;)"/>
+    </form>
+</div>
+
 <!-- Load screen -->
 <div class="view" id="load">
 	<!-- -->
@@ -91,18 +80,26 @@
     </div>
 </div>
 
+<!-- Connect screen -->
+<div class="view" id="main">
+	<input type="button" class="mainbtn" value="Host" onclick="openView(&quot;host&quot;)"/>
+	<div id="spacer">
+	</div>
+	<input type="button" class="mainbtn" value="Join" onclick="openView(&quot;join&quot;)"/>
+</div>
+
+<div class="view" id="play">
+	you are spy
+</div>
 <!-- Wait screen -->
 <div class="view" id="wait">
-	Waiting for other players
+	Waiting for other players...
 	<div id="plist">
-		<ol>
-			<li>test</li>
-			<li>test</li>
-			<li>test</li>
-			<li>test</li>
-			<li>test</li>
-		</ol>
+		<ul id="pplist">
+			<li>me</li>
+		</ul>
 	</div>
+	<input type="button" id="adminstart" value="Start" onclick="openView(&quot;play&quot;)"/>
 </div>
 
 
@@ -110,12 +107,17 @@
 	</div>
 	<div id="controls">
 		<!-- Mock controls (will be actually triggered automatically -->
+		<br /><br />
+		<hr />
 		<input type="button" value="Load" onclick="openView(&quot;load&quot;)" />
 		<input type="button" value="Star" onclick="openView(&quot;main&quot;)" />
 		<input type="button" value="Host" onclick="openView(&quot;host&quot;)" />
 		<input type="button" value="Join" onclick="openView(&quot;join&quot;)" />
 		<input type="button" value="Wait" onclick="openView(&quot;wait&quot;)" />
 		<input type="button" value="Play" onclick="openView(&quot;play&quot;)" />
+		<br />
+		Nick:<input type="text"  id="newnick" />
+		<input type="button" value="Join.." onclick="addUserToList()" />
 	</div>
 </body>
 </html>

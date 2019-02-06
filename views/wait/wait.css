@@ -1,9 +1,60 @@
 #wait {
 	padding-top: 20px;
+	padding-bottom: 15px;
 	vertical-align: middle;
 	text-align: center;
 	list-style-position: inside;
 }
 #wait #plist {
 	margin: 0 auto;
+	padding-top: 15px;
+	padding-bottom: 20px;
 }
+
+::-webkit-scrollbar { 
+	display: none; 
+}
+  ul {
+	margin: 0;
+	padding: 20px;
+	list-style-type: none;
+	text-align: center;
+	list-style-position: inside;
+	overflow-y: scroll;
+	max-height: 300px;
+	height: 300px;
+	scrollbar-width: none;
+  }
+  
+  ul li {
+	position: relative;
+	z-index: 10;
+	padding: 5px 15px;
+	background-color: rgb(101, 0, 196);
+	color: #fff;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+	animation: fade-in 0.5s ease-in-out 0.5s forwards;
+	opacity: 0;
+	border-radius: 10px 0 10px 0;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+	width: 60%;
+	margin: 0 auto;
+  }
+  
+  ul li + li { margin-top: 10px; }
+	
+#wait input[type="button"] {
+		background-color: #8800ff; /* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+		font-weight: 200;
+	}
+
