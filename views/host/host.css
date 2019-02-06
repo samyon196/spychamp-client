@@ -1,3 +1,70 @@
 #host {
-	vertical-align: middle;
+	padding-top: 40px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+#host form {
+	text-align: center;
+	width: 270px;
+	margin: 0 auto;
+}
+
+#host .group {
+  position:relative;
+  margin-bottom:45px;
+}
+#host input {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:255px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+#host input:focus         { outline:none; }
+
+/* LABEL ======================================= */
+#host label                {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+#host input:focus ~ label, #host input:valid ~ label        {
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+#host .bar    { position:relative; display:block; width:270px; }
+#host .bar:before, #host .bar:after     {
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+#host .bar:before {
+  left:50%;
+}
+#host .bar:after {
+  right:50%;
+}
+
+/* active state */
+#host input:focus ~ .bar:before, #host input:focus ~ .bar:after {
+  width:50%;
 }

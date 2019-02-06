@@ -1,5 +1,18 @@
 <!-- Host screen -->
 <div class="view" id="host">
-	Select nick <br />
-	Select time <br />
+	<form>
+
+      <div class="group">
+        <input type="text" id="username" required>
+        <span class="bar"></span>
+        <label>Username</label>
+      </div>
+
+      <div class="group">
+        <input type="number" id="gametime" value="10" min="5" max="15" required>
+        <span class="bar"></span>
+        <label>Time[min]</label>
+      </div>
+	  <input type="button" class="mainbtn" value="Create" onclick="openView(&quot;wait&quot;)"/>
+    </form>
 </div>
