@@ -20,7 +20,7 @@ body {
 	border-radius: 0 10px 0 10px;
 	box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24);
 	opacity: 0;
-	transition: height 1s ease-in-out, width 2s ease-in-out;
+	transition: height 0.5s ease-in-out;
 	animation: fade-in 3s ease-in-out 0.5s forwards;
 }
 #header {
@@ -44,7 +44,7 @@ body {
 }
 .view {
 	opacity: 0;
-	animation: fade-in 2s ease-in-out 0.5s forwards;
+	animation: fade-in 0.5s ease-in-out 0.5s forwards;
 	display: none;
 	padding: 10px;
 }
