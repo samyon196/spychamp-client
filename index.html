@@ -45,19 +45,28 @@
 <!-- Connect screen -->
 <div class="view" id="main">
 	<input type="button" class="mainbtn" value="Host" onclick="openView(&quot;host&quot;)"/>
+	<div id="spacer">
+	</div>
 	<input type="button" class="mainbtn" value="Join" onclick="openView(&quot;join&quot;)"/>
 </div>
 
 <!-- Join screen -->
 <div class="view" id="join">
-	Room number <br />
+	<form>
+      <div class="group">
+        <input type="text" id="username_j" required autofocus>
+        <span class="bar"></span>
+        <label>Username</label>
+      </div>
+	  <input type="button" value="Join" onclick="openView(&quot;wait&quot;)"/>
+    </form>
 </div>
+
 <!-- Host screen -->
 <div class="view" id="host">
 	<form>
-
       <div class="group">
-        <input type="text" id="username" required autofocus>
+        <input type="text" id="username_h" required autofocus>
         <span class="bar"></span>
         <label>Username</label>
       </div>

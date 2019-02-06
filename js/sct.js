@@ -16,4 +16,8 @@ function openView(viewName) {
 	var margin = getComputedStyle(document.querySelector('.view')).marginTop;
 	var height = view.scrollHeight + header.scrollHeight + 'px';
 	container.style.height = height;
+	if(viewName == "join")
+		document.getElementById("username_h").focus();
+	if(viewName == "host")
+		document.getElementById("username_j").focus();
 }

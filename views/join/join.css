@@ -1,3 +1,84 @@
 #join {
-	vertical-align: middle;
+	padding-top: 40px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+#join input[type="button"] {
+	background-color: #8800ff; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+}
+#join form {
+	text-align: center;
+	width: 270px;
+	margin: 0 auto;
+}
+
+#join .group {
+  position:relative;
+  margin-bottom:35px;
+}
+#join input[type="text"], input[type="number"] {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:255px;
+  border:none;
+  border-bottom:1px solid #8800ff;
+  background-color: #ffffff;
+}
+#join input:focus         { outline:none; }
+
+/* LABEL ======================================= */
+#join label                {
+  color:#8800ff;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+#join input:focus ~ label, #join input:valid ~ label        {
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+#join .bar    { position:relative; display:block; width:270px; }
+#join .bar:before, #join .bar:after     {
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+#join .bar:before {
+  left:50%;
+}
+#join .bar:after {
+  right:50%;
+}
+
+/* active state */
+#join input:focus ~ .bar:before, #join input:focus ~ .bar:after {
+  width:50%;
 }
