@@ -3,6 +3,19 @@
 	padding-left: 15px;
 	padding-bottom: 15px;
 }
+#host input[type="button"] {
+	background-color: #8800ff; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+}
 #host form {
 	text-align: center;
 	width: 270px;
@@ -13,19 +26,20 @@
   position:relative;
   margin-bottom:45px;
 }
-#host input {
+#host input[type="text"], input[type="number"] {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
   width:255px;
   border:none;
-  border-bottom:1px solid #757575;
+  border-bottom:1px solid #8800ff;
+  background-color: #ffffff;
 }
 #host input:focus         { outline:none; }
 
 /* LABEL ======================================= */
 #host label                {
-  color:#999;
+  color:#8800ff;
   font-size:18px;
   font-weight:normal;
   position:absolute;

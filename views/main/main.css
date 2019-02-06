@@ -2,8 +2,8 @@
 	text-align: center;
 	height: 64px;
 }
-.mainbtn {
-	background-color: #997fff; /* Green */
+#main .mainbtn {
+	background-color: #8800ff; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
