@@ -89,19 +89,89 @@
 </div>
 
 <div class="view" id="play">
-	you are spy
+	Remaining time:
+	<div id="clock">
+		00:00
+	</div><br />
+	Players:
+	<table class="people_table" id="people" style="width:100%">
+		<tr>
+		</tr>
+		<tr>
+		  <td>Lior</td>
+		  <td>Samyon</td>
+		</tr>
+		<tr>
+		  <td>Ori</td>
+		  <td>Omer</td>
+		</tr>
+		<tr>
+			<td>Daniel <span id="first"> 1st</span></td>
+			<td>Noam</td>
+		</tr>
+		<tr>
+			<td>Idan</td>
+			<td>Noam</td>
+		</tr>
+	  </table> 
+	<br /><hr /><br />
+	Places:
+	<table class="places_table" style="width:100%">
+		<tr>
+		</tr>
+		<tr>
+		  <td>Hospital</td>
+		  <td>Police</td>
+		  <td>Technion</td>
+		</tr>
+		<tr>
+		  <td>Army</td>
+		  <td>Movie</td>
+		  <td>Airplane</td>
+		</tr>
+		<tr>
+				<td>Hospital</td>
+				<td>Police</td>
+				<td>Technion</td>
+			  </tr>
+			  <tr>
+				<td>Army</td>
+				<td>Movie</td>
+				<td>Airplane</td>
+			  </tr>
+			  <tr>
+					<td>Hospital</td>
+					<td>Police</td>
+					<td>Technion</td>
+				  </tr>
+				  <tr>
+					<td>Army</td>
+					<td>Movie</td>
+					<td>Airplane</td>
+				  </tr>
+				  <tr>
+						<td>Hospital</td>
+						<td>Police</td>
+						<td>Technion</td>
+					  </tr>
+					  <tr>
+						<td>Army</td>
+						<td>Movie</td>
+						<td>Airplane</td>
+					  </tr>
+	  </table> 
 </div>
 <!-- Wait screen -->
 <div class="view" id="wait">
-	Waiting for other players...
-	<div id="plist">
-		<ul id="pplist">
-			<li>me</li>
-		</ul>
+		Waiting for other players...
+		<div id="plist">
+			<ul id="pplist">
+				<li>me</li>
+			</ul>
+		</div>
+		<input type="button" id="adminstart" value="Start" onclick="openView(&quot;play&quot;)"/>
 	</div>
-	<input type="button" id="adminstart" value="Start" onclick="openView(&quot;play&quot;)"/>
-</div>
-
+	
 
 		</div>
 	</div>

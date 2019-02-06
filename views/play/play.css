@@ -1,3 +1,28 @@
 #play {
 	vertical-align: middle;
+	padding: 20px;
+}
+table.people_table td {
+	border: 1px solid rgb(182, 182, 182);
+	text-align: center;
+	width: 50%;
+}
+table.places_table td {
+	border: 1px solid rgb(182, 182, 182);
+	text-align: center;
+	width: 33%;
+}
+#play #clock {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+#play hr {
+    border: none;
+    height: 1px;
+    background-color: rgb(179, 179, 179); /* Modern Browsers */
+}
+#play #first {
+	color: red;
+	font-size: 10px;
 }
