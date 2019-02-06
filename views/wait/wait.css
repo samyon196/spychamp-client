@@ -1,3 +1,8 @@
 #wait {
+	padding-top: 20px;
 	vertical-align: middle;
+	text-align: center;
+}
+#wait #plist {
+	margin: 0 auto;
 }
