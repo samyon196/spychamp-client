@@ -2,6 +2,7 @@
 	padding-top: 20px;
 	vertical-align: middle;
 	text-align: center;
+	list-style-position: inside;
 }
 #wait #plist {
 	margin: 0 auto;
