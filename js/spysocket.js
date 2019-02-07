@@ -11,17 +11,32 @@ class SpySocket {
         this.send("CONNECT HELLO");
     }
     onConnClose() {
-        alert("Conn closed");
+        openView("load");
         this.isConnected = false;
     }
     onIncomingMessage(evt) {
         var msg = evt.data;
-        if(msg === "CONNECT WELCOME") {
+        var tokens = msg.split(" ");
+        if(tokens[0] === "CONNECT" && tokens[1] === "WELCOME") {
             openView("main");
+        }
+        if(tokens[0] === "HOST" && tokens[1] === "APPROVED") {
+            openView("wait");
+        }
+        if(tokens[0] === "JOIN" && tokens[1] === "APPROVED") {
+            openView("wait");
+        }
+        if(tokens[0] === "EXISTING") {
+            var names = tokens.slice(1);
+            for(name of names) {
+                addUserToList(name);
+            }
+        }
+        if(tokens[0] === "INCOMING") {
+            addUserToList(tokens[1]);
         }
     }
     sendMessage(msg) {
-        alert(msg);
         this.ws.send(msg);
     }
 }

@@ -1,10 +1,7 @@
 function addUserToList(name) {
-
-
-
-    var firstname = document.getElementById('newnick').value;
+    //var firstname = document.getElementById('newnick').value;
     var entry = document.createElement('li');
-    entry.appendChild(document.createTextNode(firstname));
+    entry.appendChild(document.createTextNode(name));
     var list = document.getElementById("pplist");
     list.appendChild(entry);
     var waiting = document.getElementById("wait");
