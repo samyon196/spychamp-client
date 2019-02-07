@@ -47,7 +47,7 @@ public class ChatServer extends WebSocketServer {
             msleep();
             conn.send("HOST APPROVED");
             players.add(s.get(1));
-            broadcast("INCOMING " + s.get(1));
+            conn.send("INCOMING " + s.get(1));
 
         }
         if(s.get(0).equals("JOIN")) {
@@ -62,6 +62,10 @@ public class ChatServer extends WebSocketServer {
             players.add(s.get(1));
             broadcast("INCOMING " + s.get(1));
 
+        }
+        if(s.get(0).equals("START")) {
+            msleep();
+            broadcast("STARTING");
         }
 
     }

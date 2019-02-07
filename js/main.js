@@ -1,7 +1,7 @@
 var gws;
 function pageLoaded() {
     openView("load");
-    gws = new SpySocket("ws://localhost:10006");
+    gws = new SpySocket("ws://localhost:10009");
 }
 
 function onHostClick() {
@@ -15,4 +15,10 @@ function onJoinClick() {
     openView("load");
     var username = document.getElementById("username_j").value;
     gws.sendMessage("JOIN " + username);
+}
+
+function onClickStart() {
+    openView("load");
+    var username = document.getElementById("username_h").value;
+    gws.sendMessage("START " + username);
 }
