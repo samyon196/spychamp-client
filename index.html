@@ -5,29 +5,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SpyChamp</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<script src="js/sct.js"></script>
-
+	
+	<script src="js/spysocket.js"></script>
+	<script src="js/navigator.js"></script>
+	<script src="js/main.js"></script>
 	<!-- Views css: -->
-		<link rel="stylesheet" type="text/css" href="views/host/host.css" />
-	<link rel="stylesheet" type="text/css" href="views/join/join.css" />
-	<link rel="stylesheet" type="text/css" href="views/load/load.css" />
+		<link rel="stylesheet" type="text/css" href="views/play/play.css" />
 	<link rel="stylesheet" type="text/css" href="views/main/main.css" />
-	<link rel="stylesheet" type="text/css" href="views/play/play.css" />
+	<link rel="stylesheet" type="text/css" href="views/join/join.css" />
+	<link rel="stylesheet" type="text/css" href="views/host/host.css" />
+	<link rel="stylesheet" type="text/css" href="views/load/load.css" />
 	<link rel="stylesheet" type="text/css" href="views/wait/wait.css" />
 
 
 	<!-- Views js: -->
-		<script src="views/host/host.js"></script>
-	<script src="views/join/join.js"></script>
-	<script src="views/load/load.js"></script>
+		<script src="views/play/play.js"></script>
 	<script src="views/main/main.js"></script>
-	<script src="views/play/play.js"></script>
+	<script src="views/join/join.js"></script>
+	<script src="views/host/host.js"></script>
+	<script src="views/load/load.js"></script>
 	<script src="views/wait/wait.js"></script>
 
 
 </head>
 
-<body>
+<body onload="pageLoaded()">
 	<!-- Main Box -->
 	<div id="container">
 
@@ -39,60 +41,17 @@
 
 		<div id="content">
 			<!-- Views go here -->
-			<!-- Host screen -->
-<div class="view" id="host">
-	<form>
-      <div class="group">
-        <input type="text" id="username_h" required autofocus>
-        <span class="bar"></span>
-        <label>Username</label>
-      </div>
-
-      <div class="group">
-        <input type="number" id="gametime" value="10" min="5" max="15" required>
-        <span class="bar"></span>
-        <label>Time[min]</label>
-      </div>
-	  <input type="button" value="Create" onclick="openView(&quot;wait&quot;)"/>
-    </form>
-</div>
-
-<!-- Join screen -->
-<div class="view" id="join">
-	<form>
-      <div class="group">
-        <input type="text" id="username_j" required autofocus>
-        <span class="bar"></span>
-        <label>Username</label>
-      </div>
-	  <input type="button" value="Join" onclick="openView(&quot;wait&quot;)"/>
-    </form>
-</div>
-
-<!-- Load screen -->
-<div class="view" id="load">
-	<!-- -->
-    <div id="table">
-        <div id="tablecell">
-            <div id="loadwheel">
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Connect screen -->
-<div class="view" id="main">
-	<input type="button" class="mainbtn" value="Host" onclick="openView(&quot;host&quot;)"/>
-	<div id="spacer">
+			<div class="view" id="play">
+	<div id="player">
+		<hr />
+		You are NOT the spy!<br />
+		Location: Hospital
+		<hr />
 	</div>
-	<input type="button" class="mainbtn" value="Join" onclick="openView(&quot;join&quot;)"/>
-</div>
-
-<div class="view" id="play">
 	Remaining time:
 	<div id="clock">
 		00:00
-	</div><br />
+	</div><br /> <hr > <br />
 	Players:
 	<table class="people_table" id="people" style="width:100%">
 		<tr>
@@ -161,6 +120,55 @@
 					  </tr>
 	  </table> 
 </div>
+<!-- Connect screen -->
+<div class="view" id="main">
+	<input type="button" class="mainbtn" value="Host" onclick="openView(&quot;host&quot;)"/>
+	<div id="spacer">
+	</div>
+	<input type="button" class="mainbtn" value="Join" onclick="openView(&quot;join&quot;)"/>
+</div>
+
+<!-- Join screen -->
+<div class="view" id="join">
+	<form>
+      <div class="group">
+        <input type="text" id="username_j" required autofocus>
+        <span class="bar"></span>
+        <label>Username</label>
+      </div>
+	  <input type="button" value="Join" onclick="openView(&quot;wait&quot;)"/>
+    </form>
+</div>
+
+<!-- Host screen -->
+<div class="view" id="host">
+	<form>
+      <div class="group">
+        <input type="text" id="username_h" required autofocus>
+        <span class="bar"></span>
+        <label>Username</label>
+      </div>
+
+      <div class="group">
+        <input type="number" id="gametime" value="10" min="5" max="15" required>
+        <span class="bar"></span>
+        <label>Time[min]</label>
+      </div>
+	  <input type="button" value="Create" onclick="openView(&quot;wait&quot;)"/>
+    </form>
+</div>
+
+<!-- Load screen -->
+<div class="view" id="load">
+	<!-- -->
+    <div id="table">
+        <div id="tablecell">
+            <div id="loadwheel">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Wait screen -->
 <div class="view" id="wait">
 		Waiting for other players...

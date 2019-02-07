@@ -2,6 +2,9 @@
 	vertical-align: middle;
 	padding: 20px;
 }
+#play #player {
+	text-align: center;
+}
 table.people_table td {
 	border: 1px solid rgb(182, 182, 182);
 	text-align: center;
