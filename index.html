@@ -44,8 +44,9 @@
 			<div class="view" id="play">
 	<div id="player">
 		<hr />
-		You are NOT the spy!<br />
-		Location: Hospital
+		<p id="role">
+
+		</p>
 		<hr />
 	</div>
 	Remaining time:
@@ -54,71 +55,11 @@
 	</div><br /> <hr > <br />
 	Players:
 	<table class="people_table" id="people" style="width:100%">
-		<tr>
-		</tr>
-		<tr>
-		  <td>Lior</td>
-		  <td>Samyon</td>
-		</tr>
-		<tr>
-		  <td>Ori</td>
-		  <td>Omer</td>
-		</tr>
-		<tr>
-			<td>Daniel <span id="first"> 1st</span></td>
-			<td>Noam</td>
-		</tr>
-		<tr>
-			<td>Idan</td>
-			<td>Noam</td>
-		</tr>
-	  </table> 
+	</table> 
 	<br /><hr /><br />
 	Places:
-	<table class="places_table" style="width:100%">
-		<tr>
-		</tr>
-		<tr>
-		  <td>Hospital</td>
-		  <td>Police</td>
-		  <td>Technion</td>
-		</tr>
-		<tr>
-		  <td>Army</td>
-		  <td>Movie</td>
-		  <td>Airplane</td>
-		</tr>
-		<tr>
-				<td>Hospital</td>
-				<td>Police</td>
-				<td>Technion</td>
-			  </tr>
-			  <tr>
-				<td>Army</td>
-				<td>Movie</td>
-				<td>Airplane</td>
-			  </tr>
-			  <tr>
-					<td>Hospital</td>
-					<td>Police</td>
-					<td>Technion</td>
-				  </tr>
-				  <tr>
-					<td>Army</td>
-					<td>Movie</td>
-					<td>Airplane</td>
-				  </tr>
-				  <tr>
-						<td>Hospital</td>
-						<td>Police</td>
-						<td>Technion</td>
-					  </tr>
-					  <tr>
-						<td>Army</td>
-						<td>Movie</td>
-						<td>Airplane</td>
-					  </tr>
-	  </table> 
+	<table class="places_table" id="places" style="width:100%">
+	</table>
 </div>
 <!-- Connect screen -->
 <div class="view" id="main">
@@ -182,9 +123,8 @@
 
 		</div>
 	</div>
-	<!--
+	
 	<div id="controls">
-		 Mock controls (will be actually triggered automatically 
 		<br /><br />
 		<hr />
 		<input type="button" value="Load" onclick="openView(&quot;load&quot;)" />
@@ -195,8 +135,8 @@
 		<input type="button" value="Play" onclick="openView(&quot;play&quot;)" />
 		<br />
 		Nick:<input type="text"  id="newnick" />
-		<input type="button" value="Join.." onclick="addUserToList()" />
+		<input type="button" value="Join.." onclick="addPlayerToTable()" />
 	</div>
-	-->
+
 </body>
 </html>

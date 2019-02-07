@@ -42,9 +42,29 @@ class SpySocket {
         if(tokens[0] === "INCOMING" && (state === "join" || state === "host")) {
             addUserToList(tokens[1]);
         }
+        if(tokens[0] === "PLAYERS" && (state === "join" || state === "host")) {
+            var numFirst = parseInt(tokens[1]);
+            var names = tokens.slice(2);
+            buildPlayersTable(names, numFirst);
+        }
+        if(tokens[0] === "LOCATIONS" && (state === "join" || state === "host")) {
+            var names = tokens.slice(1);
+            buildLocationsTable(names);
+        }
+        if(tokens[0] === "ROLE" && (state === "join" || state === "host")) {
+            if(tokens[1] === "SPY") {
+                setPlayerSpy();
+            }
+            else if(tokens[1] === "NOTSPY") {
+                setPlayerRole(tokens[2]);
+            }
+        }
         if(tokens[0] === "STARTING" && (state === "join" || state === "host")) {
             state = "play";
             openView("play");
+        }
+        if(tokens[0] === "REMAINING" && state === "play") {
+            setTime(tokens[1], tokens[2]);
         }
     }
     sendMessage(msg) {

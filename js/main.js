@@ -1,7 +1,7 @@
 var gws;
 function pageLoaded() {
     openView("load");
-    gws = new SpySocket("ws://localhost:10009");
+    gws = new SpySocket("ws://localhost:10002");
 }
 
 function onHostClick() {

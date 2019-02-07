@@ -23,7 +23,7 @@ Server: broadcast "LOCATIONS <loc1> <loc2> ..."
 Server: broadcast "PLAYERS <player1> <player2> ..."
 Server: sends "ROLE SPY"
 Server: sends "ROLE NOTSPY LOCATION <selected_location>"
-
+Server: sends "STARTING"
 Each second:
     Server: broadcast "REMAINING <M> <S>"
 
