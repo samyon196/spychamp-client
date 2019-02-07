@@ -1,7 +1,7 @@
 var gws;
 function pageLoaded() {
     openView("load");
-    gws = new SpySocket("ws://localhost:10002");
+    gws = new SpySocket("ws://localhost:10004");
 }
 
 function onHostClick() {
@@ -21,4 +21,10 @@ function onClickStart() {
     openView("load");
     var username = document.getElementById("username_h").value;
     gws.sendMessage("START " + username);
+}
+
+function onClickStop() {
+    openView("load");
+    var username = document.getElementById("username_h").value;
+    gws.sendMessage("STOP " + username);
 }

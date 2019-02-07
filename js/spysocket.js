@@ -1,4 +1,5 @@
 var state = "";
+var isAdmin = false;
 class SpySocket {
     constructor(address) {
         this.isConnected = false;
@@ -26,12 +27,15 @@ class SpySocket {
         if(tokens[0] === "HOST" && tokens[1] === "APPROVED") {
             openView("wait");
             state = "host";
-            document.getElementById("adminstart").style.display = "inline";
+            isAdmin = true;
+            if(isAdmin)
+                document.getElementById("adminstart").style.display = "inline";
         }
         if(tokens[0] === "JOIN" && tokens[1] === "APPROVED") {
             openView("wait");
             state = "join";
-            document.getElementById("adminstart").style.display = "none";
+            isAdmin = false;
+                document.getElementById("adminstart").style.display = "none";
         }
         if(tokens[0] === "EXISTING" && state === "join") {
             var names = tokens.slice(1);
@@ -62,9 +66,26 @@ class SpySocket {
         if(tokens[0] === "STARTING" && (state === "join" || state === "host")) {
             state = "play";
             openView("play");
+            if(isAdmin)
+                document.getElementById("adminstop").style.display = "inline";
+            else
+                document.getElementById("adminstop").style.display = "none";
         }
         if(tokens[0] === "REMAINING" && state === "play") {
             setTime(tokens[1], tokens[2]);
+        }
+        if(tokens[0] === "ENDGAME" && state === "play") {
+            clearTables();
+            clearWaitingList();
+            if(isAdmin)
+                state = "host";
+            else
+                state = "join";
+            openView("wait");
+        }
+        if(tokens[0] === "SERVERMESSAGE") {
+            var msg_arr = tokens.slice(1);
+            alert(msg_arr.join(" "));
         }
     }
     sendMessage(msg) {

@@ -54,12 +54,16 @@
 		00:00
 	</div><br /> <hr > <br />
 	Players:
-	<table class="people_table" id="people" style="width:100%">
+	<table class="people_table" id="people" style="table-layout: fixed;width:100%">
 	</table> 
 	<br /><hr /><br />
 	Places:
-	<table class="places_table" id="places" style="width:100%">
+	<table class="places_table" id="places" style="table-layout: fixed;width:100%">
 	</table>
+	<br />
+	<div id="buttonWrap">
+		<input type="button" id="adminstop" value="Stop" onclick="onClickStop()"/>
+	</div>
 </div>
 <!-- Connect screen -->
 <div class="view" id="main">

@@ -10,6 +10,12 @@ function setTime(min, sec) {
     var clock = document.getElementById("clock");
     clock.innerHTML=min + ":" + sec;
 }
+function clearTables() {
+    var tablePpl = document.getElementById("people");
+    var tablePls = document.getElementById("places");
+    tablePpl.innerHTML = "";
+    tablePls.innerHTML = "";
+}
 function buildPlayersTable(name_arr, idx) {
     //var idx = Math.floor(Math.random() * name_arr.length); 
     if(name_arr.length % 2 ==  1) {
