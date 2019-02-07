@@ -5,6 +5,7 @@ import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.Timer;
 
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
@@ -12,9 +13,43 @@ import org.java_websocket.server.WebSocketServer;
 
 public class ChatServer extends WebSocketServer {
     private List<String> players;
+    private List<String> places;
+    private String time;
     public ChatServer( int port ) {
         super( new InetSocketAddress( port ) );
         players = new ArrayList<>();
+        places = new ArrayList<>();
+        this.time = "0";
+//        players.add("playerHospital");
+//        players.add("playerHello");
+//        players.add("playeraaaa");
+//        players.add("playercccc");
+//        players.add("playerbbbbb");
+//        players.add("playerddddd");
+//        players.add("playerfffff");
+//        players.add("playereeeeee");
+//        players.add("playerkkkkk");
+//        players.add("playergggg");
+//        players.add("playerhhhhh");
+//        players.add("playerlllll");
+//        players.add("playerwwwww");
+//        players.add("playerqqqqq");
+//        players.add("playsaqqq");
+
+        places.add("Hospital");
+        places.add("Hello");
+        places.add("aaaa");
+        places.add("cccc");
+        places.add("bbbbb");
+        places.add("ddddd");
+        places.add("fffff");
+        places.add("eeeeee");
+        places.add("kkkkk");
+        places.add("gggg");
+        places.add("hhhhh");
+        places.add("lllll");
+        places.add("wwwww");
+        places.add("qqqqq");
     }
 
     @Override
@@ -48,6 +83,7 @@ public class ChatServer extends WebSocketServer {
             conn.send("HOST APPROVED");
             players.add(s.get(1));
             conn.send("INCOMING " + s.get(1));
+            this.time = s.get(2);
 
         }
         if(s.get(0).equals("JOIN")) {
@@ -65,7 +101,20 @@ public class ChatServer extends WebSocketServer {
         }
         if(s.get(0).equals("START")) {
             msleep();
+            String ppl = "PLAYERS 2";
+            String pls = "LOCATIONS";
+            for(String player : players) { //TODO CHANGE TO PPL!!!
+                ppl += (" " + player);
+            }
+            for(String loc : places) {
+                pls += (" " + loc);
+            }
+            broadcast(ppl);
+            broadcast(pls);
+            broadcast("ROLE NOTSPY SelectedLocation");
             broadcast("STARTING");
+            Timer timer = new Timer();
+            timer.schedule(new CountDown(this, Integer.parseInt(this.time)-1), 0, 1000);
         }
 
     }
@@ -73,7 +122,7 @@ public class ChatServer extends WebSocketServer {
     public void msleep() {
         try
         {
-            Thread.sleep(3000);
+            Thread.sleep(1500);
         }
         catch(InterruptedException ex)
         {
