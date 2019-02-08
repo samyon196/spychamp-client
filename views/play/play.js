@@ -1,3 +1,14 @@
+function setRoleHider() {
+    document.getElementById("hider").onclick = function() {
+        var role = document.getElementById("role");
+        if(role.style.display === "none") {
+            role.style.display = "block";
+        }
+        else {
+            role.style.display = "none";
+        }
+    }
+}
 function setPlayerSpy() {
     var roleBox = document.getElementById("role");
     roleBox.innerHTML="You are the SPY!";
@@ -48,7 +59,7 @@ function buildPlayersTable(name_arr, idx) {
         };
         var fst = document.createElement('span');
         fst.setAttribute('id', 'first');
-        fst.innerHTML = ' 1st';
+        fst.innerHTML = ' first';
 
         cell1.appendChild(document.createTextNode(name_arr[i]));
         cell2.appendChild(document.createTextNode(name_arr[i+1]));

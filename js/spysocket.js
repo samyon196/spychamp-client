@@ -10,16 +10,17 @@ class SpySocket {
     }
     onConnOpen() {
         this.isConnected = true;
-        this.send("CONNECT HELLO");
+        this.send("CONNECT~HELLO");
     }
     onConnClose() {
+        setRedLoader(); // Indicates an error
         openView("load");
         state = "load";
         this.isConnected = false;
     }
     onIncomingMessage(evt) {
         var msg = evt.data;
-        var tokens = msg.split(" ");
+        var tokens = msg.split("~");
         if(tokens[0] === "CONNECT" && tokens[1] === "WELCOME") {
             openView("main");
             state = "main";
@@ -74,7 +75,7 @@ class SpySocket {
         if(tokens[0] === "REMAINING" && state === "play") {
             setTime(tokens[1], tokens[2]);
         }
-        if(tokens[0] === "ENDGAME" && state === "play") {
+        if(tokens[0] === "ENDGAME" && (state === "join" || state === "host" || state === "play")) {
             clearTables();
             clearWaitingList();
             if(isAdmin)
@@ -84,8 +85,7 @@ class SpySocket {
             openView("wait");
         }
         if(tokens[0] === "SERVERMESSAGE") {
-            var msg_arr = tokens.slice(1);
-            alert(msg_arr.join(" "));
+            alert(tokens[1]);
         }
     }
     sendMessage(msg) {
