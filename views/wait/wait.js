@@ -8,9 +8,9 @@ function addUserToList(name) {
 	var header = document.getElementById("header");
 	var container = document.getElementById("container");
 	var height = waiting.scrollHeight + header.scrollHeight + 'px';
-    container.style.height = height;
+    container.style.height = height;*/
     pplist = document.getElementById("pplist");
-    pplist.scrollTop = pplist.scrollHeight; */
+    pplist.scrollTop = pplist.scrollHeight;
 }
 
 function clearWaitingList() {

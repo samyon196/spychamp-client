@@ -7,7 +7,11 @@ function setRoleHider() {
         else {
             role.style.display = "none";
         }
+        openView("play");
     }
+}
+function setRoleVisible() {
+    document.getElementById("role").style.display = "block";
 }
 function setPlayerSpy() {
     var roleBox = document.getElementById("role");

@@ -26,17 +26,17 @@ class SpySocket {
             state = "main";
         }
         if(tokens[0] === "HOST" && tokens[1] === "APPROVED") {
-            openView("wait");
             state = "host";
             isAdmin = true;
             if(isAdmin)
                 document.getElementById("adminstart").style.display = "inline";
+            openView("wait");
         }
         if(tokens[0] === "JOIN" && tokens[1] === "APPROVED") {
-            openView("wait");
             state = "join";
             isAdmin = false;
-                document.getElementById("adminstart").style.display = "none";
+            document.getElementById("adminstart").style.display = "none";
+            openView("wait");
         }
         if(tokens[0] === "EXISTING" && state === "join") {
             var names = tokens.slice(1);
@@ -66,11 +66,12 @@ class SpySocket {
         }
         if(tokens[0] === "STARTING" && (state === "join" || state === "host")) {
             state = "play";
-            openView("play");
             if(isAdmin)
                 document.getElementById("adminstop").style.display = "inline";
             else
                 document.getElementById("adminstop").style.display = "none";
+            setRoleVisible();
+            openView("play");
         }
         if(tokens[0] === "REMAINING" && state === "play") {
             setTime(tokens[1], tokens[2]);
