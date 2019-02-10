@@ -32,11 +32,17 @@ class SpySocket {
                 document.getElementById("adminstart").style.display = "inline";
             openView("wait");
         }
+        if(tokens[0] === "HOST" && tokens[1] === "DENIED") {
+            openView("main");
+        }
         if(tokens[0] === "JOIN" && tokens[1] === "APPROVED") {
             state = "join";
             isAdmin = false;
             document.getElementById("adminstart").style.display = "none";
             openView("wait");
+        }
+        if(tokens[0] === "JOIN" && tokens[1] === "DENIED") {
+            openView("main");
         }
         if(tokens[0] === "EXISTING" && state === "join") {
             var names = tokens.slice(1);
