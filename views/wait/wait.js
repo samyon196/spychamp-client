@@ -13,8 +13,15 @@ function addUserToList(name) {
     pplist.scrollTop = pplist.scrollHeight;
 }
 
-function removeUserFromLiist(name) {
+function removeUserFromList(name) {
     //TODO: LOOP FOR ALL CHILDS, IF NAME EQ, REMOVE.
+    let children = document.getElementById("pplist").children;
+    for(child of children) {
+        if(child.innerHTML === name) {
+            child.style.display = "none";
+        }
+    }
+
 }
 function clearWaitingList() {
     document.getElementById("pplist").innerHTML = "";

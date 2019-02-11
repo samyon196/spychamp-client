@@ -53,6 +53,9 @@ class SpySocket {
         if(tokens[0] === "INCOMING" && (state === "join" || state === "host")) {
             addUserToList(tokens[1]);
         }
+        if(tokens[0] === "OUTGOING" && (state === "join" || state === "host")) {
+            removeUserFromList(tokens[1]);
+        }
         if(tokens[0] === "PLAYERS" && (state === "join" || state === "host")) {
             var numFirst = parseInt(tokens[1]);
             var names = tokens.slice(2);
