@@ -1,7 +1,7 @@
 var gws;
 function pageLoaded() {
     openView("load");
-    gws = new SpySocket("ws://localhost:10006");
+    gws = new SpySocket("ws://localhost:10005");
     setRoleHider();
 }
 

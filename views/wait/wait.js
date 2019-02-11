@@ -21,6 +21,8 @@ function removeUserFromList(name) {
             child.style.display = "none";
         }
     }
+    pplist = document.getElementById("pplist");
+    pplist.scrollTop = pplist.scrollHeight;
 
 }
 function clearWaitingList() {

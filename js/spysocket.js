@@ -20,6 +20,7 @@ class SpySocket {
     }
     onIncomingMessage(evt) {
         var msg = evt.data;
+        console.log(msg);
         var tokens = msg.split("~");
         if(tokens[0] === "CONNECT" && tokens[1] === "WELCOME") {
             openView("main");
@@ -93,6 +94,12 @@ class SpySocket {
             else
                 state = "join";
             openView("wait");
+        }
+        if(tokens[0] === "HOSTLEFT") {
+            setRedLoader(); // Indicates an error
+            openView("load");
+            state = "load";
+            this.isConnected = false;
         }
         if(tokens[0] === "SERVERMESSAGE") {
             alert(tokens[1]);
